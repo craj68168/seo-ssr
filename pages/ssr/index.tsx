@@ -3,8 +3,9 @@ import React from "react";
 
 export const getServerSideProps = async () => {
   try {
-    const res = await fetch("https://jsonplaceholder.typicode.com/todos");
-    const data = await res.json();
+    const data = await (
+      await fetch("https://jsonplaceholder.typicode.com/todos")
+    ).json();
     return {
       props: { todos: data },
     };
@@ -25,7 +26,7 @@ const SSR = ({ todos }: any) => {
         {todos.length >= 1
           ? todos.map((d: any, i: number) => {
               return (
-                <h4
+                <h3
                   style={{
                     display: "flex",
                     justifyContent: "center",
@@ -34,7 +35,7 @@ const SSR = ({ todos }: any) => {
                   key={i}
                 >
                   {d?.title}
-                </h4>
+                </h3>
               );
             })
           : []}
