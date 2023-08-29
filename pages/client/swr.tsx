@@ -25,11 +25,11 @@ const Client = () => {
         textAlign: "center",
       }}
     >
-      <h1 style={{ textDecoration: "underline" }}>Client Site Rendering</h1>
+      <h1 style={{ textDecoration: "underline" }}>Client Site Rendering with SWR</h1>
       {data?.users?.length >= 1 ? (
         data?.users?.map((d: any, i: number) => {
           return (
-            <Link href={`/client/${d.id}`} key={i}>
+
               <div
                 style={{
                   display: "flex",
@@ -38,9 +38,8 @@ const Client = () => {
                   fontSize: "24px",
                 }}
               >
-                {d.firstName}
+                My address is {d.address.address}
               </div>
-            </Link>
           );
         })
       ) : (
