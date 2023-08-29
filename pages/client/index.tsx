@@ -13,12 +13,11 @@ const Client = () => {
     fetchUsers();
   }, []);
   return (
-    <div
-      style={{
-        textAlign: "center",
-      }}
-    >
-      <h1 style={{ textDecoration: "underline" }}>Client Site Rendering</h1>
+    <div style={{
+        textAlign:"center",
+        
+      }}>
+      <h1 style={{textDecoration:"underline"}}>Client Site Rendering</h1>
       {users?.users?.length >= 1 ? (
         users?.users?.map((d: any, i: number) => {
           return (
