@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 
 const Client = () => {
   const [users, setUsers] = useState<any>([]);
-  console.log("user", users);
 
   useEffect(() => {
     const fetchUsers = async () => {
